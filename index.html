@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="System 36">
-    <meta name="theme-color" content="#667eea">
-    <meta name="description" content="System 36 Golf Handicap Calculator for casual tournaments">
+<!-- saved from url=(0037)file:///Users/m4/Downloads/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System 36 Golf Scorer</title>
     <style>
         * {
@@ -16,18 +11,11 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
-        }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -104,8 +92,6 @@
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
-            min-height: 44px; /* iOS recommended touch target */
-            touch-action: manipulation; /* Prevents double-tap zoom */
         }
 
         button:hover {
@@ -115,7 +101,6 @@
 
         button:active {
             transform: translateY(0);
-            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
         }
 
         button.danger {
@@ -426,260 +411,33 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            .container {
-                border-radius: 15px;
-            }
-
-            .header {
-                padding: 20px 15px;
-            }
-
             .header h1 {
-                font-size: 1.6em;
-            }
-
-            .header p {
-                font-size: 0.95em;
+                font-size: 1.8em;
             }
 
             .content {
                 padding: 15px;
-            }
-
-            .section {
-                margin-bottom: 20px;
-            }
-
-            .section-title {
-                font-size: 1.2em;
-                margin-bottom: 10px;
             }
 
             .input-group {
                 flex-direction: column;
             }
 
-            input[type="text"], input[type="number"], input[type="file"], select {
+            input[type="text"], input[type="number"], select {
                 min-width: 100%;
-                font-size: 16px; /* Prevents iOS zoom on focus */
-                padding: 14px;
-            }
-
-            button {
-                width: 100%;
-                padding: 14px;
-                font-size: 1em;
-                margin-bottom: 10px;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .player-list {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .player-card {
-                padding: 20px;
-            }
-
-            .player-card h3 {
-                font-size: 1.3em;
-            }
-
-            .course-preset {
-                padding: 18px;
-                margin-bottom: 10px;
-            }
-
-            .course-preset h4 {
-                font-size: 1.1em;
-            }
-
-            /* Make scorecard table scrollable horizontally */
-            .scorecard {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                margin: 0 -15px 20px -15px;
-                padding: 0 15px;
             }
 
             table {
-                font-size: 0.7em;
-                min-width: 800px; /* Ensures table doesn't compress too much */
+                font-size: 0.75em;
             }
 
             th, td {
-                padding: 6px 4px;
-                min-width: 35px;
+                padding: 5px;
             }
 
             .hole-input {
-                width: 35px;
-                padding: 4px;
-                font-size: 14px;
+                width: 40px;
             }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .stat-box {
-                padding: 12px;
-            }
-
-            .stat-label {
-                font-size: 0.75em;
-            }
-
-            .stat-value {
-                font-size: 1.3em;
-            }
-
-            .saved-rounds {
-                grid-template-columns: 1fr;
-            }
-
-            .saved-round-card {
-                padding: 15px;
-            }
-
-            .info-box {
-                padding: 12px;
-                font-size: 0.9em;
-            }
-
-            .info-box ul {
-                margin-left: 15px;
-            }
-
-            .info-box li {
-                font-size: 0.85em;
-            }
-
-            .save-load-section {
-                padding: 15px;
-            }
-
-            /* Better mobile table styling */
-            .results-table {
-                font-size: 0.75em;
-            }
-
-            .results-table th,
-            .results-table td {
-                padding: 8px 4px;
-            }
-
-            /* Mobile-friendly delete buttons */
-            .remove-player,
-            .delete-round {
-                padding: 8px;
-                min-width: 44px;
-                min-height: 44px;
-            }
-
-            /* Improve touch targets */
-            .course-preset,
-            .player-card,
-            .saved-round-card {
-                min-height: 60px;
-            }
-
-            /* Hide less important columns on very small screens */
-            @media (max-width: 480px) {
-                .results-table th:nth-child(4),
-                .results-table td:nth-child(4) {
-                    display: none; /* Hide "To Par" on very small screens */
-                }
-                
-                table {
-                    font-size: 0.65em;
-                }
-                
-                .hole-input {
-                    width: 32px;
-                    font-size: 12px;
-                }
-
-                .header h1 {
-                    font-size: 1.4em;
-                }
-
-                .stats {
-                    grid-template-columns: 1fr;
-                }
-            }
-        }
-
-        /* Landscape orientation on mobile */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .header {
-                padding: 15px;
-            }
-
-            .header h1 {
-                font-size: 1.4em;
-            }
-
-            .header p {
-                font-size: 0.85em;
-            }
-
-            .content {
-                padding: 10px;
-            }
-
-            .section {
-                margin-bottom: 15px;
-            }
-        }
-
-        /* iPad and tablet specific */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .container {
-                max-width: 95%;
-            }
-
-            .player-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Improve touch scrolling */
-        .scorecard,
-        .saved-rounds,
-        .player-list {
-            -webkit-overflow-scrolling: touch;
-        }
-
-        /* Prevent text selection on buttons */
-        button,
-        .player-card,
-        .course-preset,
-        .saved-round-card {
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        /* Allow text selection in inputs */
-        input,
-        textarea {
-            -webkit-user-select: text;
-            user-select: text;
         }
     </style>
 </head>
@@ -706,32 +464,37 @@
             </div>
 
             <div class="save-load-section">
-                <h2 class="section-title">Save & Load Rounds</h2>
+                <h2 class="section-title">Save &amp; Load Rounds</h2>
                 <div class="action-buttons">
-                    <input 
-                        type="text"
-                        id="roundName"
-                        placeholder="Round name (e.g., Lombok Kosaido - Nov 18)"
-                        style="flex: 2; min-width: 200px;"
-                    />
+                    <input type="text" id="roundName" placeholder="Round name (e.g., Lombok Kosaido - Nov 18)" style="flex: 2; min-width: 200px;">
                     <button onclick="saveRound()">💾 Save Current Round</button>
                     <button onclick="clearCurrent()" class="danger">🗑️ Clear Current</button>
                     <button onclick="printRound()">🖨️ Print Results</button>
                 </div>
-                <div id="savedRoundsList" class="saved-rounds"></div>
+                <div class="action-buttons">
+                    <input type="file" id="importRoundFile" accept=".json" onchange="importRoundFromFile(this)" style="display: none;">
+                    <button onclick="document.getElementById(&#39;importRoundFile&#39;).click()">📂 Import Saved Game</button>
+                    <button onclick="exportAllData()">📦 Export All Data</button>
+                </div>
+                <div id="savedRoundsList" class="saved-rounds"><div class="saved-round-card">
+                    <div class="saved-round-header">
+                        <div>
+                            <div class="saved-round-name">Shane &amp; Thomaz 031225</div>
+                            <div class="saved-round-date">12/7/2025 10:28 AM</div>
+                        </div>
+                    <button class="delete-round">Delete</button></div>
+                    <div class="saved-round-info">
+                        Sira Beach Golf Club • ⚫ championship<br>
+                        2 players • Par 72
+                    </div>
+                </div></div>
             </div>
 
             <div class="save-load-section">
                 <h2 class="section-title">Import Course Scorecard</h2>
                 <p style="color: #666; margin-bottom: 10px;">Upload an image of your course scorecard to reference while entering hole data:</p>
                 <div class="action-buttons">
-                    <input 
-                        type="file" 
-                        id="scorecardImage" 
-                        accept="image/*"
-                        onchange="handleScorecardUpload(this)"
-                        style="flex: 1;"
-                    />
+                    <input type="file" id="scorecardImage" accept="image/*" onchange="handleScorecardUpload(this)" style="flex: 1;">
                     <button id="clearImageButton" onclick="clearScorecardImage()" class="hidden danger">
                         🗑️ Clear Image
                     </button>
@@ -804,12 +567,7 @@
                 <div class="input-group">
                     <label style="display: flex; align-items: center; gap: 10px;">
                         <strong>Course Par:</strong>
-                        <input 
-                            type="number" 
-                            id="coursePar"
-                            value="72"
-                            style="flex: none; width: 80px;"
-                        />
+                        <input type="number" id="coursePar" value="72" style="flex: none; width: 80px;">
                     </label>
                 </div>
             </div>
@@ -817,24 +575,28 @@
             <div class="section">
                 <h2 class="section-title">Add Players</h2>
                 <div class="input-group">
-                    <input 
-                        type="text"
-                        id="playerName"
-                        placeholder="Player name"
-                    />
+                    <input type="text" id="playerName" placeholder="Player name">
                     <button onclick="addPlayer()">Add Player</button>
                 </div>
 
-                <div id="playerList" class="player-list"></div>
+                <div id="playerList" class="player-list"><div class="player-card active">
+                    <div class="remove-player" onclick="event.stopPropagation(); removePlayer(1765074213779)">×</div>
+                    <h3>Shane</h3>
+                    <p>Click to enter scores</p>
+                </div><div class="player-card">
+                    <div class="remove-player" onclick="event.stopPropagation(); removePlayer(1765074220618)">×</div>
+                    <h3>Thomaz</h3>
+                    <p>Click to enter scores</p>
+                </div></div>
             </div>
 
-            <div id="scoringSection" class="section hidden">
-                <h2 class="section-title">Score Entry - <span id="currentPlayerName"></span></h2>
+            <div id="scoringSection" class="section">
+                <h2 class="section-title">Score Entry - <span id="currentPlayerName">Shane</span></h2>
                 
-                <div id="currentCourseInfo" style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px; display: none;">
-                    <strong>Current Course:</strong> <span id="currentCourseName"></span> | 
-                    <strong>Tees:</strong> <span id="currentTees"></span> | 
-                    <strong>Par:</strong> <span id="currentPar"></span>
+                <div id="currentCourseInfo" style="background: rgb(248, 249, 250); padding: 10px; border-radius: 8px; margin-bottom: 15px; display: block;">
+                    <strong>Current Course:</strong> <span id="currentCourseName">Sira Beach Golf Club</span> | 
+                    <strong>Tees:</strong> <span id="currentTees">⚫ championship</span> | 
+                    <strong>Par:</strong> <span id="currentPar">72</span>
                 </div>
                 
                 <div class="scorecard">
@@ -851,18 +613,33 @@
                         <tbody>
                             <tr id="parRow">
                                 <td><strong>Par</strong></td>
-                            </tr>
-                            <tr id="scoreRow">
-                                <td><strong>Score</strong></td>
-                            </tr>
+                            <td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><strong id="parTotal">72</strong></td></tr>
+                            <tr id="scoreRow"><td><strong>Score</strong></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><strong>86</strong></td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div id="playerStats" class="stats"></div>
+                <div id="playerStats" class="stats">
+                    <div class="stat-box">
+                        <div class="stat-label">System 36 Points</div>
+                        <div class="stat-value">21</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Handicap</div>
+                        <div class="stat-value">15</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Gross Score</div>
+                        <div class="stat-value">86</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Net Score</div>
+                        <div class="stat-value">71</div>
+                    </div>
+                </div>
             </div>
 
-            <div id="resultsSection" class="section hidden">
+            <div id="resultsSection" class="section">
                 <h2 class="section-title">Results</h2>
                 <table class="results-table">
                     <thead>
@@ -876,8 +653,23 @@
                             <th>Net Score</th>
                         </tr>
                     </thead>
-                    <tbody id="resultsBody">
-                    </tbody>
+                    <tbody id="resultsBody"><tr class="winner">
+                        <td><span class="trophy">🏆</span>1</td>
+                        <td><strong>Shane</strong></td>
+                        <td>86</td>
+                        <td>+14</td>
+                        <td>21</td>
+                        <td>15</td>
+                        <td><strong>71</strong></td>
+                    </tr><tr>
+                        <td>2</td>
+                        <td><strong>Thomaz</strong></td>
+                        <td>104</td>
+                        <td>+32</td>
+                        <td>12</td>
+                        <td>24</td>
+                        <td><strong>80</strong></td>
+                    </tr></tbody>
                 </table>
             </div>
         </div>
@@ -1009,18 +801,15 @@
             const course = savedCourses[index];
             
             if (course) {
-                holePars = course.pars;
+                console.log('Loading custom course:', course.name, course.pars);
+                holePars = [...course.pars];
                 currentCourse = {
                     name: course.name,
                     tees: course.tees,
-                    pars: course.pars
+                    pars: [...course.pars]
                 };
                 
-                const parInputs = document.querySelectorAll('#parRow input');
-                parInputs.forEach((input, i) => {
-                    input.value = holePars[i];
-                });
-                
+                updateAllParDisplays();
                 updateCoursePar();
                 updateCourseInfo();
                 render();
@@ -1055,41 +844,66 @@
         function updateCoursePar() {
             const total = holePars.reduce((sum, par) => sum + par, 0);
             document.getElementById('coursePar').value = total;
-            document.getElementById('parTotal').textContent = total;
+            const parTotalElem = document.getElementById('parTotal');
+            if (parTotalElem) {
+                parTotalElem.textContent = total;
+            }
         }
 
         function loadSiraBeach() {
-            // Sira Beach Golf Club (Lombok Kosaido) - Update these values with actual scorecard
-            holePars = [4, 4, 3, 5, 4, 4, 3, 4, 5, 4, 5, 3, 5, 4, 3, 4, 4, 4];
+            console.log('Loading Sira Beach Golf Club...');
+            // Sira Beach Golf Club - Par 72 (Correct pars: 4,3,5,4,4,5,3,4,4,4,4,5,3,4,5,3,4,4)
+            holePars = [4, 3, 5, 4, 4, 5, 3, 4, 4, 4, 4, 5, 3, 4, 5, 3, 4, 4];
+            console.log('New pars:', holePars);
+            
             currentCourse = {
                 name: 'Sira Beach Golf Club',
                 tees: 'championship',
-                pars: holePars
+                pars: [...holePars]
             };
             
-            const parInputs = document.querySelectorAll('#parRow input');
-            parInputs.forEach((input, i) => {
-                input.value = holePars[i];
-            });
-            
+            // Force update all par displays
+            updateAllParDisplays();
             updateCoursePar();
             updateCourseInfo();
             render();
         }
 
+        function updateAllParDisplays() {
+            // Update the par inputs in the scorecard table
+            const parInputs = document.querySelectorAll('#parRow input');
+            console.log('Updating par inputs, found:', parInputs.length);
+            
+            if (parInputs.length === 18) {
+                parInputs.forEach((input, i) => {
+                    input.value = holePars[i];
+                    console.log(`Set hole ${i+1} to par ${holePars[i]}`);
+                });
+            } else {
+                console.error('Expected 18 par inputs, found:', parInputs.length);
+            }
+            
+            // Also update the data entry form inputs if visible
+            for (let i = 1; i <= 18; i++) {
+                const parInput = document.getElementById(`par${i}`);
+                if (parInput) {
+                    parInput.value = holePars[i - 1];
+                }
+            }
+        }
+
         function loadStandardCourse() {
+            console.log('Loading Standard Course...');
             holePars = [4, 4, 3, 5, 4, 4, 3, 4, 5, 4, 4, 3, 5, 4, 4, 3, 4, 5];
+            console.log('New pars:', holePars);
+            
             currentCourse = {
                 name: 'Standard Par 72 Course',
                 tees: 'mens',
-                pars: holePars
+                pars: [...holePars]
             };
             
-            const parInputs = document.querySelectorAll('#parRow input');
-            parInputs.forEach((input, i) => {
-                input.value = holePars[i];
-            });
-            
+            updateAllParDisplays();
             updateCoursePar();
             updateCourseInfo();
             render();
@@ -1336,15 +1150,125 @@
                 date: new Date().toISOString(),
                 players: players,
                 holePars: holePars,
-                coursePar: holePars.reduce((sum, par) => sum + par, 0)
+                coursePar: holePars.reduce((sum, par) => sum + par, 0),
+                course: currentCourse // Save course info
             };
 
+            // Save to localStorage
             let savedRounds = JSON.parse(localStorage.getItem('golfRounds') || '[]');
             savedRounds.push(roundData);
             localStorage.setItem('golfRounds', JSON.stringify(savedRounds));
 
+            // Auto-download the round as a JSON file
+            downloadRoundAsFile(roundData);
+
             roundNameInput.value = '';
             renderSavedRoundsList();
+        }
+
+        function downloadRoundAsFile(roundData) {
+            // Create a safe filename from the round name
+            const safeFileName = roundData.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+            const fileName = `${safeFileName}_${new Date().toISOString().split('T')[0]}.json`;
+            
+            const dataStr = JSON.stringify(roundData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            
+            console.log('Round downloaded as:', fileName);
+        }
+
+        function importRoundFromFile(input) {
+            const file = input.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const roundData = JSON.parse(e.target.result);
+                    
+                    // Validate the data
+                    if (!roundData.players || !roundData.holePars) {
+                        alert('Invalid round file format.');
+                        return;
+                    }
+                    
+                    // Load the round data
+                    players = roundData.players;
+                    holePars = [...roundData.holePars];
+                    
+                    // Restore course info if available
+                    if (roundData.course) {
+                        currentCourse = {
+                            name: roundData.course.name || '',
+                            tees: roundData.course.tees || '',
+                            pars: [...roundData.holePars]
+                        };
+                    }
+                    
+                    selectedPlayerId = players.length > 0 ? players[0].id : null;
+                    
+                    // Update par inputs in the scorecard table
+                    const parInputs = document.querySelectorAll('#parRow input');
+                    if (parInputs.length === 18) {
+                        parInputs.forEach((input, i) => {
+                            input.value = holePars[i];
+                        });
+                    }
+                    
+                    updateCoursePar();
+                    updateCourseInfo();
+                    render();
+                    
+                    // Scroll to results
+                    document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+                    
+                    alert(`Round "${roundData.name}" loaded successfully!`);
+                    
+                } catch (error) {
+                    console.error('Error importing round:', error);
+                    alert('Error loading round file. Please check the file format.');
+                }
+                
+                // Clear the file input
+                input.value = '';
+            };
+            
+            reader.readAsText(file);
+        }
+
+        function exportAllData() {
+            const allData = {
+                rounds: JSON.parse(localStorage.getItem('golfRounds') || '[]'),
+                courses: JSON.parse(localStorage.getItem('golfCourses') || '[]'),
+                exportDate: new Date().toISOString(),
+                version: '1.0'
+            };
+            
+            const fileName = `system36_backup_${new Date().toISOString().split('T')[0]}.json`;
+            const dataStr = JSON.stringify(allData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            
+            const roundCount = allData.rounds.length;
+            const courseCount = allData.courses.length;
+            alert(`Backup complete!\n${roundCount} rounds and ${courseCount} courses exported.`);
         }
 
         function loadSavedRounds() {
@@ -1356,16 +1280,24 @@
             const round = savedRounds.find(r => r.id === id);
             
             if (round) {
+                console.log('Loading round:', round.name);
                 players = round.players;
-                holePars = round.holePars;
+                holePars = [...round.holePars];
+                
+                // Restore course info if available
+                if (round.course) {
+                    currentCourse = {
+                        name: round.course.name || '',
+                        tees: round.course.tees || '',
+                        pars: [...round.holePars]
+                    };
+                }
+                
                 selectedPlayerId = players.length > 0 ? players[0].id : null;
                 
-                const parInputs = document.querySelectorAll('#parRow input');
-                parInputs.forEach((input, i) => {
-                    input.value = holePars[i];
-                });
-                
+                updateAllParDisplays();
                 updateCoursePar();
+                updateCourseInfo();
                 render();
                 
                 document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
@@ -1425,6 +1357,10 @@
                     deleteRound(round.id);
                 };
                 
+                // Show course name if available
+                const courseName = round.course && round.course.name ? round.course.name : 'Custom Course';
+                const teeInfo = round.course && round.course.tees ? ` • ${getTeeColorEmoji(round.course.tees)} ${round.course.tees}` : '';
+                
                 card.innerHTML = `
                     <div class="saved-round-header">
                         <div>
@@ -1433,6 +1369,7 @@
                         </div>
                     </div>
                     <div class="saved-round-info">
+                        ${courseName}${teeInfo}<br>
                         ${playerCount} player${playerCount !== 1 ? 's' : ''} • Par ${round.coursePar}
                     </div>
                 `;
@@ -1567,5 +1504,6 @@
             });
         }
     </script>
-</body>
-</html>
+
+
+</body></html>
