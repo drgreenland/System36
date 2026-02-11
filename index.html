@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0037)file:///Users/m4/Downloads/index.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System 36 Golf Scorer</title>
     <style>
@@ -464,37 +464,43 @@
             </div>
 
             <div class="save-load-section">
-                <h2 class="section-title">Save &amp; Load Rounds</h2>
+                <h2 class="section-title">Save & Load Rounds</h2>
                 <div class="action-buttons">
-                    <input type="text" id="roundName" placeholder="Round name (e.g., Lombok Kosaido - Nov 18)" style="flex: 2; min-width: 200px;">
+                    <input 
+                        type="text"
+                        id="roundName"
+                        placeholder="Round name (e.g., Lombok Kosaido - Nov 18)"
+                        style="flex: 2; min-width: 200px;"
+                    />
                     <button onclick="saveRound()">💾 Save Current Round</button>
                     <button onclick="clearCurrent()" class="danger">🗑️ Clear Current</button>
                     <button onclick="printRound()">🖨️ Print Results</button>
                 </div>
                 <div class="action-buttons">
-                    <input type="file" id="importRoundFile" accept=".json" onchange="importRoundFromFile(this)" style="display: none;">
-                    <button onclick="document.getElementById(&#39;importRoundFile&#39;).click()">📂 Import Saved Game</button>
+                    <input 
+                        type="file" 
+                        id="importRoundFile" 
+                        accept=".json"
+                        onchange="importRoundFromFile(this)"
+                        style="display: none;"
+                    />
+                    <button onclick="document.getElementById('importRoundFile').click()">📂 Import Saved Game</button>
                     <button onclick="exportAllData()">📦 Export All Data</button>
                 </div>
-                <div id="savedRoundsList" class="saved-rounds"><div class="saved-round-card">
-                    <div class="saved-round-header">
-                        <div>
-                            <div class="saved-round-name">Shane &amp; Thomaz 031225</div>
-                            <div class="saved-round-date">12/7/2025 10:28 AM</div>
-                        </div>
-                    <button class="delete-round">Delete</button></div>
-                    <div class="saved-round-info">
-                        Sira Beach Golf Club • ⚫ championship<br>
-                        2 players • Par 72
-                    </div>
-                </div></div>
+                <div id="savedRoundsList" class="saved-rounds"></div>
             </div>
 
             <div class="save-load-section">
                 <h2 class="section-title">Import Course Scorecard</h2>
                 <p style="color: #666; margin-bottom: 10px;">Upload an image of your course scorecard to reference while entering hole data:</p>
                 <div class="action-buttons">
-                    <input type="file" id="scorecardImage" accept="image/*" onchange="handleScorecardUpload(this)" style="flex: 1;">
+                    <input 
+                        type="file" 
+                        id="scorecardImage" 
+                        accept="image/*"
+                        onchange="handleScorecardUpload(this)"
+                        style="flex: 1;"
+                    />
                     <button id="clearImageButton" onclick="clearScorecardImage()" class="hidden danger">
                         🗑️ Clear Image
                     </button>
@@ -567,7 +573,12 @@
                 <div class="input-group">
                     <label style="display: flex; align-items: center; gap: 10px;">
                         <strong>Course Par:</strong>
-                        <input type="number" id="coursePar" value="72" style="flex: none; width: 80px;">
+                        <input 
+                            type="number" 
+                            id="coursePar"
+                            value="72"
+                            style="flex: none; width: 80px;"
+                        />
                     </label>
                 </div>
             </div>
@@ -575,28 +586,24 @@
             <div class="section">
                 <h2 class="section-title">Add Players</h2>
                 <div class="input-group">
-                    <input type="text" id="playerName" placeholder="Player name">
+                    <input 
+                        type="text"
+                        id="playerName"
+                        placeholder="Player name"
+                    />
                     <button onclick="addPlayer()">Add Player</button>
                 </div>
 
-                <div id="playerList" class="player-list"><div class="player-card active">
-                    <div class="remove-player" onclick="event.stopPropagation(); removePlayer(1765074213779)">×</div>
-                    <h3>Shane</h3>
-                    <p>Click to enter scores</p>
-                </div><div class="player-card">
-                    <div class="remove-player" onclick="event.stopPropagation(); removePlayer(1765074220618)">×</div>
-                    <h3>Thomaz</h3>
-                    <p>Click to enter scores</p>
-                </div></div>
+                <div id="playerList" class="player-list"></div>
             </div>
 
-            <div id="scoringSection" class="section">
-                <h2 class="section-title">Score Entry - <span id="currentPlayerName">Shane</span></h2>
+            <div id="scoringSection" class="section hidden">
+                <h2 class="section-title">Score Entry - <span id="currentPlayerName"></span></h2>
                 
-                <div id="currentCourseInfo" style="background: rgb(248, 249, 250); padding: 10px; border-radius: 8px; margin-bottom: 15px; display: block;">
-                    <strong>Current Course:</strong> <span id="currentCourseName">Sira Beach Golf Club</span> | 
-                    <strong>Tees:</strong> <span id="currentTees">⚫ championship</span> | 
-                    <strong>Par:</strong> <span id="currentPar">72</span>
+                <div id="currentCourseInfo" style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px; display: none;">
+                    <strong>Current Course:</strong> <span id="currentCourseName"></span> | 
+                    <strong>Tees:</strong> <span id="currentTees"></span> | 
+                    <strong>Par:</strong> <span id="currentPar"></span>
                 </div>
                 
                 <div class="scorecard">
@@ -613,64 +620,41 @@
                         <tbody>
                             <tr id="parRow">
                                 <td><strong>Par</strong></td>
-                            <td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><input type="number" class="hole-input" min="3" max="5"></td><td><strong id="parTotal">72</strong></td></tr>
-                            <tr id="scoreRow"><td><strong>Score</strong></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><input type="number" class="hole-input" min="1" max="15"></td><td><strong>86</strong></td></tr>
+                            </tr>
+                            <tr id="scoreRow">
+                                <td><strong>Score</strong></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div id="playerStats" class="stats">
-                    <div class="stat-box">
-                        <div class="stat-label">System 36 Points</div>
-                        <div class="stat-value">21</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Handicap</div>
-                        <div class="stat-value">15</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Gross Score</div>
-                        <div class="stat-value">86</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Net Score</div>
-                        <div class="stat-value">71</div>
-                    </div>
-                </div>
+                <div id="playerStats" class="stats"></div>
             </div>
 
-            <div id="resultsSection" class="section">
+            <div id="resultsSection" class="section hidden">
                 <h2 class="section-title">Results</h2>
                 <table class="results-table">
                     <thead>
                         <tr>
                             <th>Rank</th>
                             <th>Player</th>
-                            <th>Gross Score</th>
+                            <th>Gross</th>
                             <th>To Par</th>
-                            <th>S36 Points</th>
+                            <th>S36 Pts</th>
                             <th>Handicap</th>
                             <th>Net Score</th>
+                            <th>Back 9</th>
+                            <th>Last 6</th>
+                            <th>Last 3</th>
+                            <th>Result</th>
                         </tr>
                     </thead>
-                    <tbody id="resultsBody"><tr class="winner">
-                        <td><span class="trophy">🏆</span>1</td>
-                        <td><strong>Shane</strong></td>
-                        <td>86</td>
-                        <td>+14</td>
-                        <td>21</td>
-                        <td>15</td>
-                        <td><strong>71</strong></td>
-                    </tr><tr>
-                        <td>2</td>
-                        <td><strong>Thomaz</strong></td>
-                        <td>104</td>
-                        <td>+32</td>
-                        <td>12</td>
-                        <td>24</td>
-                        <td><strong>80</strong></td>
-                    </tr></tbody>
+                    <tbody id="resultsBody">
+                    </tbody>
                 </table>
+                <div id="tiebreakNote" class="hidden" style="margin-top: 15px; padding: 12px; background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 8px; font-size: 0.9em; color: #555;">
+                    <strong>🔄 Countback Method:</strong> Tied players are separated by most System 36 points on Back 9 → Last 6 holes → Last 3 holes → Last hole. A "Dead Heat" means scores are identical across all countback stages.
+                </div>
             </div>
         </div>
     </div>
@@ -1113,15 +1097,58 @@
             }, 0);
         }
 
+        function calculateSystem36PointsForHoles(scores, startHole, endHole) {
+            // Calculate System 36 points for a specific range of holes (0-indexed)
+            let points = 0;
+            for (let i = startHole; i <= endHole; i++) {
+                const numScore = parseInt(scores[i]) || 0;
+                const par = holePars[i];
+                if (numScore === 0) continue;
+                if (numScore <= par) points += 2;
+                else if (numScore === par + 1) points += 1;
+            }
+            return points;
+        }
+
+        function resolveTiebreaker(playerA, playerB) {
+            // Back 9: holes 9-17 (0-indexed)
+            const a9 = calculateSystem36PointsForHoles(playerA.scores, 9, 17);
+            const b9 = calculateSystem36PointsForHoles(playerB.scores, 9, 17);
+            if (a9 !== b9) return { winner: a9 > b9 ? playerA : playerB, reason: 'back 9' };
+
+            // Last 6: holes 12-17 (0-indexed)
+            const a6 = calculateSystem36PointsForHoles(playerA.scores, 12, 17);
+            const b6 = calculateSystem36PointsForHoles(playerB.scores, 12, 17);
+            if (a6 !== b6) return { winner: a6 > b6 ? playerA : playerB, reason: 'last 6 holes' };
+
+            // Last 3: holes 15-17 (0-indexed)
+            const a3 = calculateSystem36PointsForHoles(playerA.scores, 15, 17);
+            const b3 = calculateSystem36PointsForHoles(playerB.scores, 15, 17);
+            if (a3 !== b3) return { winner: a3 > b3 ? playerA : playerB, reason: 'last 3 holes' };
+
+            // Last hole: hole 17 (0-indexed)
+            const a1 = calculateSystem36PointsForHoles(playerA.scores, 17, 17);
+            const b1 = calculateSystem36PointsForHoles(playerB.scores, 17, 17);
+            if (a1 !== b1) return { winner: a1 > b1 ? playerA : playerB, reason: 'last hole' };
+
+            // Dead heat - cannot be separated
+            return { winner: null, reason: 'dead heat' };
+        }
+
         function calculateResults() {
             const coursePar = holePars.reduce((sum, par) => sum + par, 0);
             
-            return players.map(player => {
+            const results = players.map(player => {
                 const grossScore = player.scores.reduce((sum, score) => sum + (parseInt(score) || 0), 0);
                 const system36Points = calculateSystem36Points(player.scores);
                 const handicap = 36 - system36Points;
                 const netScore = grossScore - handicap;
                 const scoreToPar = grossScore - coursePar;
+
+                // Pre-calculate countback segments for display
+                const back9Points = calculateSystem36PointsForHoles(player.scores, 9, 17);
+                const last6Points = calculateSystem36PointsForHoles(player.scores, 12, 17);
+                const last3Points = calculateSystem36PointsForHoles(player.scores, 15, 17);
 
                 return {
                     ...player,
@@ -1129,9 +1156,48 @@
                     system36Points,
                     handicap,
                     netScore,
-                    scoreToPar
+                    scoreToPar,
+                    back9Points,
+                    last6Points,
+                    last3Points,
+                    tiebreakReason: '',
+                    isTied: false
                 };
-            }).sort((a, b) => a.netScore - b.netScore);
+            });
+
+            // Sort by net score first
+            results.sort((a, b) => a.netScore - b.netScore);
+
+            // Detect ties and apply countback
+            for (let i = 0; i < results.length - 1; i++) {
+                if (results[i].netScore === results[i + 1].netScore) {
+                    // Mark both as tied
+                    results[i].isTied = true;
+                    results[i + 1].isTied = true;
+
+                    // Resolve via countback
+                    const tieResult = resolveTiebreaker(results[i], results[i + 1]);
+                    if (tieResult.winner) {
+                        // Winner gets countback reason
+                        if (tieResult.winner.id === results[i].id) {
+                            results[i].tiebreakReason = `Won on ${tieResult.reason} countback`;
+                            results[i + 1].tiebreakReason = `Lost on ${tieResult.reason} countback`;
+                        } else {
+                            results[i + 1].tiebreakReason = `Won on ${tieResult.reason} countback`;
+                            results[i].tiebreakReason = `Lost on ${tieResult.reason} countback`;
+                        }
+                        // Re-sort these two based on countback
+                        if (tieResult.winner.id === results[i + 1].id) {
+                            [results[i], results[i + 1]] = [results[i + 1], results[i]];
+                        }
+                    } else {
+                        results[i].tiebreakReason = 'Dead heat';
+                        results[i + 1].tiebreakReason = 'Dead heat';
+                    }
+                }
+            }
+
+            return results;
         }
 
         // Save/Load Functions
@@ -1472,6 +1538,7 @@
         function renderResults() {
             const section = document.getElementById('resultsSection');
             const resultsBody = document.getElementById('resultsBody');
+            const tiebreakNote = document.getElementById('tiebreakNote');
             
             const results = calculateResults();
             const hasScores = results.some(r => r.grossScore > 0);
@@ -1483,20 +1550,47 @@
             
             section.classList.remove('hidden');
             resultsBody.innerHTML = '';
+
+            // Check if any ties exist to show the note
+            const hasTies = results.some(r => r.isTied);
+            if (hasTies) {
+                tiebreakNote.classList.remove('hidden');
+            } else {
+                tiebreakNote.classList.add('hidden');
+            }
             
             results.forEach((player, index) => {
                 if (player.grossScore > 0) {
                     const tr = document.createElement('tr');
                     if (index === 0) tr.className = 'winner';
+
+                    // Highlight tied rows in amber
+                    if (player.isTied && index !== 0) {
+                        tr.style.background = 'linear-gradient(135deg, #fff8e1 0%, #ffe082 100%)';
+                    }
+
+                    // Result cell content
+                    let resultText = '';
+                    if (player.tiebreakReason === 'Dead heat') {
+                        resultText = '🤝 Dead Heat';
+                    } else if (player.tiebreakReason.startsWith('Won on')) {
+                        resultText = `✅ ${player.tiebreakReason}`;
+                    } else if (player.tiebreakReason.startsWith('Lost on')) {
+                        resultText = `❌ ${player.tiebreakReason}`;
+                    }
                     
                     tr.innerHTML = `
-                        <td>${index === 0 ? '<span class="trophy">🏆</span>' : ''}${index + 1}</td>
+                        <td>${index === 0 ? '<span class="trophy">🏆</span>' : ''}${index + 1}${player.isTied ? ' <span style="color:#ff9800;font-size:0.8em;">TIE</span>' : ''}</td>
                         <td><strong>${player.name}</strong></td>
                         <td>${player.grossScore}</td>
                         <td>${player.scoreToPar > 0 ? '+' : ''}${player.scoreToPar}</td>
                         <td>${player.system36Points}</td>
                         <td>${player.handicap}</td>
                         <td><strong>${player.netScore}</strong></td>
+                        <td style="color: #1e3c72; font-weight: ${player.isTied ? 'bold' : 'normal'}">${player.back9Points}</td>
+                        <td style="color: #1e3c72; font-weight: ${player.isTied ? 'bold' : 'normal'}">${player.last6Points}</td>
+                        <td style="color: #1e3c72; font-weight: ${player.isTied ? 'bold' : 'normal'}">${player.last3Points}</td>
+                        <td style="font-size: 0.85em; color: #555;">${resultText}</td>
                     `;
                     
                     resultsBody.appendChild(tr);
@@ -1504,6 +1598,5 @@
             });
         }
     </script>
-
-
-</body></html>
+</body>
+</html>
